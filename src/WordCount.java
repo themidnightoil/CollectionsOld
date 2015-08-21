@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 public class WordCount {
@@ -99,13 +100,30 @@ public class WordCount {
 		
 	}//End show_alpha_ordered_wordCount()
 
-	
-	public void show_numerucal_ordered_wordCount(){
-		//Two arrays one holds the 	
 
+	public void show_numerical_ordered_wordCount(){
+		int maxEntry = 0;
+		for (Entry<String, Integer> entry : wordCount.entrySet())
+		{
+		    if(entry.getValue() > maxEntry){
+		    	maxEntry = entry.getValue();
+		    }
+		}
+		for(int x = 0; x <=maxEntry; x++) {
 
+			for(Map.Entry<String, Integer>entry: wordCount.entrySet()){
+				String key = entry.getKey();
+				Integer val = entry.getValue();
+			
+				
+				if(val == x){
+					System.out.println(key + " : " + val);
+					
+				}
+				
+			}
+		}
+		
 	}
-
-
 	
 }//End WordCount Class
